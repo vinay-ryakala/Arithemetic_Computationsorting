@@ -9,3 +9,5 @@ read -p "give third value" c
 Result1=$(($a+$b*$c))
 #UC4
 Result2=$(($a*$b+$c))
+#UC5
+Result3=$(($c+$a/$b))
