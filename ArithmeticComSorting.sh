@@ -32,4 +32,18 @@ do
 		fi
 	done
 done
-echo "Desending order:"${resultArray[@]}
+echo "sorting in Desending order:"${resultArray[@]}
+
+for (( i=0; i<=3; i++ ))
+do
+   for (( j=$(($i+1)); j<=3; j++ ))
+   do
+      if [ ${resultArray[$i]} -gt ${resultArray[$j]} ]
+      then
+         temp=${resultArray[$i]}
+         resultArray[$i]=${resultArray[$j]}
+         resultArray[$j]=$temp
+      fi
+   done
+done
+echo "Ascending order of result array:"${resultArray[@]}
