@@ -1,5 +1,5 @@
 #!/bin/bash -x
-
+#UC8
 echo "Welcome to Arithmetic Computation and Sorting"
 
 declare -A resultsDictionary
@@ -18,5 +18,18 @@ do
 	resultArray[$arrayKey]=$result
 	((arrayKey++))
 done
-
 echo "${resultArray[@]}"
+
+for (( i=0; i<=3; i++ ))
+do 	
+	for (( j=$(($i+1)); j<=3; j++ ))
+	do	
+		if [ ${resultArray[$i]} -lt ${resultArray[$j]} ]
+		then
+			temp=${resultArray[$i]}
+			resultArray[$i]=${resultArray[$j]}
+			resultArray[$j]=$temp
+		fi
+	done
+done
+echo "Desending order:"${resultArray[@]}
